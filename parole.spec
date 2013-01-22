@@ -1,12 +1,11 @@
 Summary:	Simple media player based on the GStreamer framework
 Name:		parole
-Version:	0.3.0.3
-Release:	2
+Version:	0.4.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
-Source0:	http://archive.xfce.org/src/apps/parole/0.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	d13ece4c5a4980a1aedfed8eb3c6172d
-Patch0:		1201f19a53e87fbf99018eaef4bbe8d832f114c2.patch
+Source0:	http://archive.xfce.org/src/apps/parole/0.4/%{name}-%{version}.tar.bz2
+# Source0-md5:	9cd6b05fbba88a85308b8385c25c4767
 URL:		http://www.xfce.org/projects/parole/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -35,7 +34,6 @@ Parole is designed with simplicity, speed and resource usage in mind.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -77,5 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/parole-0/*.so
 %{_datadir}/parole
 %{_desktopdir}/parole.desktop
-%{_iconsdir}/hicolor/*/apps/parole.*
+%{_iconsdir}/hicolor/*/apps/*.png
+%{_iconsdir}/hicolor/*/apps/*.svg
 
