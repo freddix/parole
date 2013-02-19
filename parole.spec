@@ -1,17 +1,18 @@
 Summary:	Simple media player based on the GStreamer framework
 Name:		parole
-Version:	0.4.0
-Release:	1
+Version:	0.4.0.1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Multimedia
-Source0:	http://archive.xfce.org/src/apps/parole/0.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	9cd6b05fbba88a85308b8385c25c4767
+# ad0fd21c0299ae463c50a73ab135566ba78806a4
+Source0:	http://archive.xfce.org/src/apps/parole/0.4/%{name}-%{version}.tar.xz
+# Source0-md5:	d0f5827ae9c10541371d0ee238af15d8
 URL:		http://www.xfce.org/projects/parole/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gstreamer010-plugins-base-devel
+BuildRequires:	gstreamer-plugins-base-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	intltool
 BuildRequires:	libnotify-devel
@@ -21,10 +22,11 @@ BuildRequires:	pkg-config
 Requires(post,postun):	/usr/bin/gtk-update-icon-cache
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	hicolor-icon-theme
-Requires:	gstreamer010-ffmpeg
-Requires:	gstreamer010-plugins-bad
-Requires:	gstreamer010-plugins-base
-Requires:	gstreamer010-plugins-good
+Requires:	gstreamer-libav
+Requires:	gstreamer-plugins-bad
+Requires:	gstreamer-plugins-base
+Requires:	gstreamer-plugins-good
+Requires:	gstreamer-plugins-ugly
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,13 +38,17 @@ Parole is designed with simplicity, speed and resource usage in mind.
 %setup -q
 
 %build
+./autogen.sh
+%if 0
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
+%endif
 %configure \
-	--disable-browser-plugin
+	--disable-silent-rules \
+	--with-gstreamer=1.0
 %{__make}
 
 %install
