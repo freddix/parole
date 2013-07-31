@@ -1,11 +1,11 @@
 Summary:	Simple media player based on the GStreamer framework
 Name:		parole
-Version:	0.5.1
+Version:	0.5.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://archive.xfce.org/src/apps/parole/0.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	1dc707aa2a1aede830b10638e5add381
+# Source0-md5:	918914fcdede178a027cd1ed70954c30
 URL:		http://www.xfce.org/projects/parole/
 BuildRequires:	autoconf
 BuildRequires:	automake
