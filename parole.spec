@@ -1,22 +1,22 @@
 Summary:	Simple media player based on the GStreamer framework
 Name:		parole
-Version:	0.5.4
+Version:	0.6.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
-Source0:	http://archive.xfce.org/src/apps/parole/0.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	fa25b069c90bb9d59fef46e77c98f9b0
+Source0:	http://archive.xfce.org/src/apps/parole/0.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	2545cb7c94f4073e8fced8f723abf5e3
 URL:		http://www.xfce.org/projects/parole/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gstreamer-plugins-base-devel
-BuildRequires:	gtk+-devel
+BuildRequires:	gtk+3-devel
 BuildRequires:	intltool
 BuildRequires:	libnotify-devel
 BuildRequires:	libtool
-BuildRequires:	libxfce4ui-devel
+BuildRequires:	libxfce4ui-devel >= 4.11.0
 BuildRequires:	pkg-config
 Requires(post,postun):	/usr/bin/gtk-update-icon-cache
 Requires(post,postun):	desktop-file-utils
